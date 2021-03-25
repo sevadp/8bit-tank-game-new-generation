@@ -1,5 +1,3 @@
-import pygame
-
 from project.objects.object_player import Player
 from project.objects.object_tile import Tile
 
