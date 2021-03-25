@@ -1,5 +1,7 @@
 import pygame
 
+pygame.init()
+
 
 class MainConfig(object):
     """Production configuration."""
@@ -29,7 +31,7 @@ class MainConfig(object):
     song_engine = pygame.mixer.Sound('assets/Audio/tank_engine.wav')
     song_shoot = pygame.mixer.Sound('assets/Audio/regular_shoot.wav')
 
+    fps = 30
     step = 3
     move_bullet = 9
-    is_stopped = False
     tile_width = tile_height = 64
