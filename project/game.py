@@ -8,11 +8,6 @@ from project import config
 config_object = getattr(config, "MainConfig")
 
 
-def terminate():
-    pygame.quit()
-    sys.exit()
-
-
 def main(level_id):
 
     game = Game(level_id)
