@@ -1,3 +1,6 @@
+Запуск: 
+/project/game.py
+
 Управление:
 1) WASD + Space
 2) Arrows + Mouse
