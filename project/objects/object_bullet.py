@@ -16,19 +16,23 @@ class Bullet(pygame.sprite.Sprite):
 
         if player.image == config_object.walkDown:
             self.rect = self.image.get_rect().move(
-                    player.rect.x + 16, player.rect.y + 50)
+                    player.rect.x + config_object.bullet_main_spawn_delta,
+                    player.rect.y + (config_object.bullet_size + config_object.bullet_small_spawn_delta))
             self.move = "Down"
         elif player.image == config_object.walkRight:
             self.rect = self.image.get_rect().move(
-                    player.rect.x + 50, player.rect.y + 16)
+                    player.rect.x + (config_object.bullet_size + config_object.bullet_small_spawn_delta),
+                    player.rect.y + config_object.bullet_main_spawn_delta)
             self.move = "Right"
         elif player.image == config_object.walkLeft:
             self.rect = self.image.get_rect().move(
-                    player.rect.x - 2, player.rect.y + 16)
+                    player.rect.x - config_object.bullet_small_spawn_delta,
+                    player.rect.y + config_object.bullet_main_spawn_delta)
             self.move = "Left"
         elif player.image == config_object.walkUp:
             self.rect = self.image.get_rect().move(
-                    player.rect.x + 16, player.rect.y - 2)
+                    player.rect.x + config_object.bullet_main_spawn_delta,
+                    player.rect.y - config_object.bullet_small_spawn_delta)
             self.move = "Up"
 
     def update(self):

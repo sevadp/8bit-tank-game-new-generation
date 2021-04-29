@@ -1,7 +1,7 @@
 import pygame
 
 from project import config
-from project.utils import load_level, generate_level
+from project.utils import load_level, generate_level, generate_filename
 from project.objects.object_hpbar import HpBar
 from project.objects.object_bullet import Bullet
 
@@ -24,7 +24,7 @@ class Game(object):
         self.bullet_group = pygame.sprite.Group()
         self.hp_bars = pygame.sprite.Group()
 
-        self.level_init = load_level("levels/levelex" + str(level_id) + ".txt")
+        self.level_init = load_level(generate_filename(level_id))
         self.size = len(self.level_init[0]) * config_object.tile_width, len(self.level_init) * config_object.tile_height
 
         self.tick = 0

@@ -1,9 +1,11 @@
 from project.objects.object_player import Player
 from project.objects.object_tile import Tile
+from project import config
+
+config_object = getattr(config, "MainConfig")
 
 
 def load_level(filename):
-    filename = "" + filename
     with open(filename, 'r') as mapFile:
         level_map = [line.strip() for line in mapFile]
 
@@ -31,3 +33,7 @@ def generate_level(game, level):
                 Tile(game, 'empty', x, y)
                 new_player_2 = Player(game, x, y)
     return new_player, new_player_2
+
+
+def generate_filename(level_id):
+    return config_object.files_dir + "/" + config_object.level_basename + str(level_id) + ".txt"

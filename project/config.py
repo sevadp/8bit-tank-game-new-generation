@@ -31,7 +31,14 @@ class MainConfig(object):
     song_engine = pygame.mixer.Sound('assets/Audio/tank_engine.wav')
     song_shoot = pygame.mixer.Sound('assets/Audio/regular_shoot.wav')
 
+    files_dir = "levels"
+    level_basename = "levelex"
+
     fps = 30
     step = 3
     move_bullet = 9
     tile_width = tile_height = 64
+
+    bullet_size = 48
+    bullet_main_spawn_delta = 16
+    bullet_small_spawn_delta = 2
